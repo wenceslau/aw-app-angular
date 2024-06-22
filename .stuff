@@ -7,3 +7,8 @@ npm i @angular-eslint/eslint-plugin -D
 ng add @angular-eslint/schematics
   {add angular-eslint schematics, this will add eslint to the project, and will also add the .eslintrc.json file}
 
+npm install husky -D
+  {install husky, this will allow us to run scripts before git actions}
+
+npx husky init
+  {initialize husky, this will add the husky configuration to the package.json file}

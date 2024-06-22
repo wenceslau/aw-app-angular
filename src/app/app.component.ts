@@ -29,7 +29,7 @@ export class AppComponent {
     Promise.all(promises)
       .then((data) => {
         this.items = data;
-      });
+      })
   }
 
 }
