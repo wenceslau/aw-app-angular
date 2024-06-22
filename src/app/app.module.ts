@@ -11,8 +11,8 @@ import { AppComponent } from './app.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { HeartComponent } from './components/heart/heart.component';
 import { ListComponent } from './components/list/list.component';
-import {FormsModule} from "@angular/forms";
-import {NgOptimizedImage} from "@angular/common";
+import {FormsModule} from '@angular/forms';
+import {NgOptimizedImage} from '@angular/common';
 
 @NgModule({
   declarations: [

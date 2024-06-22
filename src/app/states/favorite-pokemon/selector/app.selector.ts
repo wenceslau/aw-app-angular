@@ -20,6 +20,6 @@ export const selectById = createSelector(
 export const selectItemById = createSelector(
   selectItemns,
   (items: string[], props: { id: string }) => {
-    return items.find(id => id === props.id)
+    return items.find(id => id === props.id);
   }
 );

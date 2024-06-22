@@ -30,5 +30,5 @@ export const favoriteReducer = createReducer(
     )
   ),
 
-  on(clear, state => initialState)
+  on(clear, () => initialState)
 );

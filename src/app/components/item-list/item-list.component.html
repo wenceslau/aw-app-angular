@@ -4,6 +4,6 @@
   </div>
   <p>{{item.name}}</p>
   <div style="width: 22px" class="list-item-heart-wrapper">
-    <app-heart [selected]="isSelected" [testId]="'heart'+item.id" (onClick)="handleClickFavorite($event)"></app-heart>
+    <app-heart [selected]="isSelected" [testId]="'heart'+item.id" (clickFavorite)="handleClickFavorite($event)"></app-heart>
   </div>
 </li>

@@ -1,1 +1,9 @@
 npm i @ngrx/store@17
+  {install ngrx, similar to redux}
+
+npm i @angular-eslint/eslint-plugin -D
+  {install eslint for angular}
+
+ng add @angular-eslint/schematics
+  {add angular-eslint schematics, this will add eslint to the project, and will also add the .eslintrc.json file}
+
