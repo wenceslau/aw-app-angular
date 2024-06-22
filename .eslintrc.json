@@ -32,7 +32,10 @@
           }
         ],
         "@typescript-eslint/no-explicit-any": "off",
-        "quotes": ["error", "single"],
+        "quotes": [
+          "error",
+          "single"
+        ],
         "semi": "error"
       }
     },

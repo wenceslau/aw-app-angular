@@ -17,8 +17,8 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     //this.isSelected = this.storeService.hasItem(this.item.id);
-     this.isSelected = this.storeService.has(this.item.id);
+    //this.isSelected = this.storeService.hasItem(this.item.id);
+    this.isSelected = this.storeService.has(this.item.id);
   }
 
   handleClickFavorite() {
