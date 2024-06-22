@@ -1,0 +1,12 @@
+.heart {
+  cursor: pointer;
+  fill: lightgray;
+}
+
+.heart-selected {
+  fill: red;
+}
+
+.heart:hover {
+  fill: lightcoral;
+}
