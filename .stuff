@@ -7,6 +7,9 @@ npm i @angular-eslint/eslint-plugin -D
 ng add @angular-eslint/schematics
   {add angular-eslint schematics, this will add eslint to the project, and will also add the .eslintrc.json file}
 
+npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+  {install typescript-eslint, this will allow us to use typescript with eslint}
+
 npm install husky -D
   {install husky, this will allow us to run scripts before git actions}
 
@@ -28,3 +31,41 @@ cypress run
     {to run cypress tests in the terminal for the e2e tests}
 cypress run --component
     {to run cypress tests in the terminal for the components}
+
+storybook
+    {to create a storybook}
+    npx sb init
+        [to create a storybook]
+
+    {to run the storybook}
+    npm run storybook
+        [to run the storybook]
+
+npm install eslint-plugin-storybook -D
+    {to install eslint plugin for storybook}
+
+
+COMMANDS TO RUN
+
+npm start
+npm run lint
+npm run lint -- --fix
+cypress run
+cypress run --component
+npm run storybook
+
+
+npm install -g light-server
+    {to install light-server, https://www.npmjs.com/package/light-server}
+
+ Examples:
+     $ light-server -s . -p 7000
+     $ light-server -s dist --http2 -o
+     $ light-server -s dist --historyindex "/index.html"
+     $ light-server -s . -w "*.js, src/** # npm run build && echo wow!"
+     $ light-server -s . -x http://localhost:8000
+     $ light-server -s . -x http://localhost:8000 --servePrefix /assets
+     $ light-server -s . -b 10.0.0.1
+     $ light-server -x http://localhost:9999 --proxypath "/api" -w "public/**"
+     $ light-server -s static -w "**/*.css # # reloadcss"
+     $ light-server -c .lightserverrc

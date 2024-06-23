@@ -1,0 +1,1422 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "AppState",
+            "id": "interface-AppState-2a990846a108b92144d6e987f21e8a6f320a7017cf99e0698e531fdf70f85196b24657b901001cc3aa1d02f68cdc66b8790482c7506031142ab0cf31fc27ef6b",
+            "file": "src/app/states/favorite-pokemon/app.state.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface AppState {\r\n  ids: string[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ids",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "PokeapiService",
+            "id": "injectable-PokeapiService-7c559275414549dc89ce00e1b76270c3d6bc71b0a6a8acf3248c9c65048891f77317692fc517ca8a2eff9e059e5bb5c7eecf5785503e51e26f71db7b3643faf1",
+            "file": "src/app/services/pokeapi.service.ts",
+            "properties": [
+                {
+                    "name": "urlEndpoint",
+                    "defaultValue": "\"https://pokeapi.co/api/v2\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "get",
+                    "args": [
+                        {
+                            "name": "endpoint",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "endpoint",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Injectable} from \"@angular/core\";\r\nimport {HttpClient} from \"@angular/common/http\";\r\nimport {Observable} from \"rxjs\";\r\n\r\n@Injectable({\r\n  providedIn: \"root\"\r\n})\r\nexport class PokeapiService {\r\n\r\n  private urlEndpoint = \"https://pokeapi.co/api/v2\";\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  get(endpoint: string): Observable<any> {\r\n    return this.http.get(this.urlEndpoint + endpoint);\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "StoreService",
+            "id": "injectable-StoreService-37aab226dffe8abef3f3b8953736de3508452998c9acbde7683e537bd6fc326c5570a8e4fb0e202eee873c329b0a5450f0a7bc4be1908544e8532f25e5072eae",
+            "file": "src/app/services/store.service.ts",
+            "properties": [
+                {
+                    "name": "favoriteItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "fetchItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 125,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "has",
+                    "args": [
+                        {
+                            "name": "idFind",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "idFind",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "hasItem",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loadFromLocalStorage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "printItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 104,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeItem",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "samplesFindId",
+                    "args": [
+                        {
+                            "name": "idFind",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 113,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "idFind",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "set",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setItem",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateLocal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 91,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "updateState",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 97,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Injectable} from \"@angular/core\";\r\nimport {Store} from \"@ngrx/store\";\r\nimport {AppState} from \"../states/favorite-pokemon/app.state\";\r\nimport {add, remove, updateAllState} from \"../states/favorite-pokemon/action/app.action\";\r\nimport {selectById, selectItemById, selectItemns} from \"../states/favorite-pokemon/selector/app.selector\";\r\n\r\n@Injectable({\r\n  providedIn: \"root\"\r\n})\r\nexport class StoreService {\r\n\r\n  private favoriteItems: any = [];\r\n\r\n  constructor(private store: Store<AppState>) {\r\n    this.loadFromLocalStorage();\r\n  }\r\n\r\n  //use services and local variable with localstorage\r\n\r\n  public hasItem(id: string): boolean {\r\n    const has = this.favoriteItems.filter((item: string) => item === id);\r\n    return has.length > 0;\r\n  }\r\n\r\n  public setItem(value: string) {\r\n    this.favoriteItems.push(value);\r\n    localStorage.setItem(\"favorites\", JSON.stringify(this.favoriteItems));\r\n  }\r\n\r\n  public removeItem(value: string) {\r\n    //retrieve a new list without the value\r\n    this.favoriteItems = this.favoriteItems.filter((item: any) => item !== value);\r\n\r\n    //override the new list on the storage\r\n    localStorage.setItem(\"favorites\", JSON.stringify(this.favoriteItems));\r\n  }\r\n\r\n  public has(idFind: string): boolean {\r\n\r\n    //fetch list from localstorate\r\n    const items = this.fetchItems();\r\n\r\n    return items.includes(idFind);\r\n  }\r\n\r\n  //use state from ngRX with localstorage\r\n\r\n  public set(value: string) {\r\n\r\n    //fetch list from localstorate\r\n    const items = this.fetchItems();\r\n\r\n    //put the value on the list\r\n    items.push(value);\r\n\r\n    //override the list on localstorage\r\n    localStorage.setItem(\"favorites\", JSON.stringify(items));\r\n\r\n    //add on the state\r\n    this.store.dispatch(add({id: value}));\r\n\r\n  }\r\n\r\n  public remove(value: string) {\r\n\r\n    //fetch list from localstorate\r\n    let items = this.fetchItems();\r\n\r\n    //retrieve a new list without the value\r\n    items = items.filter((item: any) => item !== value);\r\n\r\n    //override the new list on the storage\r\n    localStorage.setItem(\"favorites\", JSON.stringify(items));\r\n\r\n    //remove from the state\r\n    this.store.dispatch(remove({id: value}));\r\n  }\r\n\r\n  private loadFromLocalStorage() {\r\n\r\n    //print the initial state for local and ngRx\r\n    this.printItems();\r\n\r\n    //load data to local variable\r\n    this.updateLocal();\r\n\r\n    //load data to state\r\n    this.updateState();\r\n  }\r\n\r\n  private updateLocal() {\r\n    const object = localStorage.getItem(\"favorites\");\r\n    this.favoriteItems = object ? JSON.parse(object) : [];\r\n    console.log(\"updateLocal: \" + JSON.stringify(this.favoriteItems));\r\n  }\r\n\r\n  private updateState() {\r\n    const object = localStorage.getItem(\"favorites\");\r\n    const arrItems: string[] = object ? JSON.parse(object) : [];\r\n\r\n    this.store.dispatch(updateAllState({ids: arrItems}));\r\n  }\r\n\r\n  private printItems() {\r\n    const observable = this.store.select(selectItemns);\r\n\r\n    observable.subscribe(value => {\r\n      console.log(\"this.items: \" + JSON.stringify(this.favoriteItems));\r\n      console.log(\"updateState: \" + JSON.stringify(value));\r\n    });\r\n  }\r\n\r\n  private samplesFindId(idFind: any) {\r\n    const product$ = this.store.select(selectItemById, {id: idFind});\r\n    product$.subscribe(value => {\r\n      console.log(\"selectItemById: \" + value);\r\n    });\r\n\r\n    const observable1 = this.store.select(selectById, {id: idFind});\r\n    observable1.subscribe(value => {\r\n      console.log(\"selectById: \" + value);\r\n    });\r\n  }\r\n\r\n  private fetchItems() {\r\n    //fetch the list from localstorage\r\n    const item = localStorage.getItem(\"favorites\");\r\n\r\n    //Convert the value to JSON if existed, or create nan empty array\r\n    return item ? JSON.parse(item) : [];\r\n  }\r\n\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store<AppState>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store<AppState>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [
+        {
+            "name": "MockStoreService",
+            "id": "class-MockStoreService-4b0e963799a0042f1a0ff28900f6065fd2090c32a9c6ad1931cc7e93b46c84a47ea531e3194743979a0d437affffd174ee36a797f3fa0c22b7a93f15055457ce",
+            "file": "src/app/components/item-list/item-list.cy.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import {ItemListComponent} from \"./item-list.component\";\r\nimport {StoreService} from \"../../services/store.service\";\r\n\r\nexport class MockStoreService {\r\n  getValue() {\r\n    return \"mock value\";\r\n  }\r\n}\r\n\r\nconst mockedItem = {\r\n  id: 1,\r\n  name: \"bulbasaur\",\r\n  sprites: {\r\n    other: {\r\n      \"official-artwork\": {\r\n        front_default: \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png\"\r\n      }\r\n    }\r\n  }\r\n};\r\n\r\ndescribe(\"<ListItem>\", () => {\r\n  it(\"should render correctly\", () => {\r\n    cy.mount(ItemListComponent, {\r\n      componentProperties: {\r\n        item: mockedItem\r\n      }, providers: [\r\n        {provide: StoreService, useClass: MockStoreService}\r\n      ]\r\n    });\r\n    cy.get(\"[id='list-item-1']\").should(\"be.visible\");\r\n  });\r\n})\r\n;\r\n",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 5,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-40db82acdcd9cf61724650313976ac2b234eeccc5ec123f2c250c388572b8f17b8a39eff4c67146f147f964c73f1c9bbd414e019576025a92080ba4439106a83",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "\"aw-app-angular\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "loadDetails",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {PokeapiService} from \"./services/pokeapi.service\";\r\n\r\n@Component({\r\n  selector: \"app-root\",\r\n  templateUrl: \"./app.component.html\",\r\n  styleUrl: \"./app.component.scss\"\r\n})\r\nexport class AppComponent {\r\n  title = \"aw-app-angular\";\r\n  items: any = [];\r\n\r\n  constructor(private pokeapiService: PokeapiService) {\r\n\r\n    this.pokeapiService.get(\"/pokemon?limit=20\")\r\n      .subscribe({\r\n        next: (data) => {\r\n          this.loadDetails(data.results);\r\n        },\r\n        error: (e) => console.error(e)\r\n      });\r\n\r\n  }\r\n\r\n  loadDetails(items: any) {\r\n    const promises = items.map((item: { url: string | URL | Request; }) => {\r\n      return fetch(item.url).then((response) => response.json());\r\n    });\r\n    Promise.all(promises)\r\n      .then((data) => {\r\n        this.items = data;\r\n      });\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./app.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "pokeapiService",
+                        "type": "PokeapiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "pokeapiService",
+                        "type": "PokeapiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div>\r\n  <app-list id=\"list\" [items]=\"items\"></app-list>\r\n</div>\r\n"
+        },
+        {
+            "name": "HeartComponent",
+            "id": "component-HeartComponent-59f4713e03590b3743f30251a80d9bba07abe393056516ccaff7e0a48f1e5c858371db3305daee240b9ddde75005f93c252d5200c7527a85c4d44df95f3b6b61",
+            "file": "src/app/components/heart/heart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-heart",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./heart.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "testId",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "clickFavorite",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClickFavorite",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"app-heart\",\r\n  templateUrl: \"./heart.component.html\",\r\n  styleUrl: \"./heart.component.scss\"\r\n})\r\nexport class HeartComponent {\r\n\r\n  @Input() testId: string = \"\";\r\n  @Input() selected: boolean = false;\r\n  @Output() clickFavorite = new EventEmitter<any>();\r\n\r\n  onClickFavorite(event: Event) {\r\n    this.clickFavorite.emit(\"onClickFavorite \" + event.type);\r\n  }\r\n}\r\n",
+            "styleUrl": "./heart.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!--  <p>{{testId}}</p>-->\r\n<svg (click)=\"onClickFavorite($event)\" [class.heart-selected]=\"selected\"\r\n    id=\"{{testId}}\" class=\"heart\" viewBox=\"0 0 472.7 472.7\">\r\n  <g>\r\n    <path d=\"M433.5,67c-25.3-25.3-59-39.3-94.8-39.3s-69.6,14-94.9,39.4l-7.3,7.3l-7.5-7.5\r\n                    c-25.4-25.4-59.1-39.4-95-39.4c-35.8,0-69.4,13.9-94.7,39.3C13.9,92.2,0,125.9,0,161.7s14,69.5,39.4,94.8l182.7,182.7\r\n                    c3.8,3.8,9,6,14.5,6c5.4,0,10.6-2.2,14.5-6l182.2-182.4c25.4-25.4,39.3-59.1,39.4-94.9S458.8,92.4,433.5,67z M132.5,117.2\r\n                    c-23.9,0-43.4,19.5-43.4,43.4c0,11-8.9,19.9-19.9,19.9s-19.9-8.9-19.9-19.9c0-45.8,37.3-83.1,83.1-83.1c11,0,19.9,8.9,19.9,19.9\r\n                    C152.4,108.4,143.5,117.2,132.5,117.2z\" id=\"XMLID_810_\"/>\r\n  </g>\r\n</svg>\r\n\r\n"
+        },
+        {
+            "name": "ItemListComponent",
+            "id": "component-ItemListComponent-b3d97e5f6d584ac68c51933d397fb3fb4941f171d5e314454f69430523b6431a81385667c1511604e65a54767f4f38b1424ed14fbaab3e39aca69866615b063e",
+            "file": "src/app/components/item-list/item-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-item-list",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./item-list.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "item",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isSelected",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleClickFavorite",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from \"@angular/core\";\r\nimport {StoreService} from \"../../services/store.service\";\r\n\r\n@Component({\r\n  selector: \"app-item-list\",\r\n  templateUrl: \"./item-list.component.html\",\r\n  styleUrl: \"./item-list.component.scss\"\r\n})\r\nexport class ItemListComponent implements OnInit {\r\n\r\n  @Input() item: any;\r\n  isSelected = false;\r\n\r\n  constructor(\r\n    private storeService: StoreService,\r\n  ) {\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    //this.isSelected = this.storeService.hasItem(this.item.id);\r\n    this.isSelected = this.storeService.has(this.item.id);\r\n  }\r\n\r\n  handleClickFavorite() {\r\n\r\n    if (this.isSelected) {\r\n      //this.storeService.removeItem(this.item.id);\r\n      this.storeService.remove(this.item.id);\r\n\r\n    } else {\r\n      //this.storeService.setItem(this.item.id);\r\n      this.storeService.set(this.item.id);\r\n    }\r\n    this.isSelected = !this.isSelected;\r\n\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./item-list.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "storeService",
+                        "type": "StoreService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "storeService",
+                        "type": "StoreService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<li class=\"list-item\" id=\"{{'list-item-' + item.id}}\">\r\n  <div class=\"list-item-image-wrapper\">\r\n    <img alt=\"{{item.name}}\" class=\"list-item-image\"\r\n         src=\"{{this.item.sprites.other['official-artwork'].front_default}}\"/>\r\n  </div>\r\n  <p>{{ item.name }}</p>\r\n  <div class=\"list-item-heart-wrapper\" style=\"width: 22px\">\r\n    <app-heart id=\"heart\" (clickFavorite)=\"handleClickFavorite()\" [selected]=\"isSelected\"\r\n               [testId]=\"'heart-'+item.id\"></app-heart>\r\n  </div>\r\n</li>\r\n"
+        },
+        {
+            "name": "ListComponent",
+            "id": "component-ListComponent-2baf31016702f5537629ebb4227e7553bf7fba40fdb3ebb2a7ea507b2f7a6fdbfab7a7e70ab13969bb0d9bac219599733ca188bf26ab16d8808c8eb5dd0ba237",
+            "file": "src/app/components/list/list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-list",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./list.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"app-list\",\r\n  templateUrl: \"./list.component.html\",\r\n  styleUrl: \"./list.component.scss\"\r\n})\r\nexport class ListComponent {\r\n\r\n  @Input() items: any = [];\r\n\r\n\r\n}\r\n",
+            "styleUrl": "./list.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class='list-wrapper' id=\"list\">\r\n  <ul class=\"list\">\r\n    @for (item of items; track item) {\r\n      <app-item-list [item]=\"item\"></app-item-list>\r\n    }\r\n  </ul>\r\n</div>\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-25c88da9610ad4f0a9ef26de69bf2e6d888fc548ea77dfb19aefc552dbf7780bff4bc388208412df8aa363c6fd741af82e725e7cf94017973a1447eade1984eb",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {HttpClientModule} from \"@angular/common/http\";\r\nimport {BrowserModule, provideClientHydration} from \"@angular/platform-browser\";\r\n\r\nimport {StoreModule} from \"@ngrx/store\";\r\nimport {favoriteReducer} from \"./states/favorite-pokemon/reducer/app.reducer\";\r\n\r\n\r\nimport {AppRoutingModule} from \"./app-routing.module\";\r\nimport {AppComponent} from \"./app.component\";\r\nimport {ItemListComponent} from \"./components/item-list/item-list.component\";\r\nimport {HeartComponent} from \"./components/heart/heart.component\";\r\nimport {ListComponent} from \"./components/list/list.component\";\r\nimport {FormsModule} from \"@angular/forms\";\r\nimport {NgOptimizedImage} from \"@angular/common\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ItemListComponent,\r\n    HeartComponent,\r\n    ListComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    HttpClientModule,\r\n    FormsModule,\r\n    NgOptimizedImage,\r\n    StoreModule.forRoot({favorite: favoriteReducer})\r\n\r\n  ],\r\n  providers: [\r\n    provideClientHydration()\r\n  ],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "HeartComponent"
+                        },
+                        {
+                            "name": "ItemListComponent"
+                        },
+                        {
+                            "name": "ListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "NgOptimizedImage"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-850a2dcb0d131ba4c4300cc7225bfa0b13e070188f72d390dc80370b5211607e6a4099366805df03e94b23309a082cad88f92f18cc9a4aea09eb45025b396d2e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterModule, Routes} from \"@angular/router\";\r\n\r\nconst routes: Routes = [];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppServerModule",
+            "id": "module-AppServerModule-4c7e2c19981812318708aa0a18ef9e20e9e953960f4772b868eb464f7c4d51bccef423bd0033a88474671f3d4396a398d7aece93c5810d7304653f312e0b3136",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.server.ts",
+            "methods": [],
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {ServerModule} from \"@angular/platform-server\";\r\n\r\nimport {AppModule} from \"./app.module\";\r\nimport {AppComponent} from \"./app.component\";\r\n\r\n@NgModule({\r\n  imports: [\r\n    AppModule,\r\n    ServerModule,\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppServerModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "add",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\"[FavoritePokemon] Add\", props<{ id: string }>())"
+            },
+            {
+                "name": "clear",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\"[FavoritePokemon] Clear\")"
+            },
+            {
+                "name": "favoriteReducer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/reducer/app.reducer.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createReducer(\r\n  initialState,\r\n\r\n  on(add, (state, {id}) => (\r\n      {\r\n        ...state,\r\n        ids: [...state.ids, id]\r\n      }\r\n    )\r\n  ),\r\n\r\n  on(remove, (state, {id}) => ({\r\n    ...state,\r\n    ids: state.ids.filter((value) => value != id)\r\n  })),\r\n\r\n  on(updateAllState, (state, {ids}) => (\r\n      {\r\n        ...state,\r\n        ids\r\n      }\r\n    )\r\n  ),\r\n\r\n  on(clear, () => initialState)\r\n)"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/reducer/app.reducer.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "AppState",
+                "defaultValue": "{\r\n  ids: [],\r\n}"
+            },
+            {
+                "name": "mockedItem",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/item-list/item-list.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  id: 1,\r\n  name: \"bulbasaur\",\r\n  sprites: {\r\n    other: {\r\n      \"official-artwork\": {\r\n        front_default: \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png\"\r\n      }\r\n    }\r\n  }\r\n}"
+            },
+            {
+                "name": "remove",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\"[FavoritePokemon] Remove\", props<{ id: string }>())"
+            },
+            {
+                "name": "selectAppState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createFeatureSelector<AppState>(\"favorite\")"
+            },
+            {
+                "name": "selectById",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createSelector(\r\n  selectAppState,\r\n  (state: AppState, props: { id: string }) => state.ids.find(id => id === props.id)\r\n)"
+            },
+            {
+                "name": "selectItemById",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createSelector(\r\n  selectItemns,\r\n  (items: string[], props: { id: string }) => {\r\n    return items.find(id => id === props.id);\r\n  }\r\n)"
+            },
+            {
+                "name": "selectItemns",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createSelector(\r\n  selectAppState,\r\n  (state: AppState) => state.ids\r\n)"
+            },
+            {
+                "name": "updateAllState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\"[FavoritePokemon] Update all state \", props<{ ids: string[] }>())"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/states/favorite-pokemon/action/app.action.ts": [
+                {
+                    "name": "add",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\"[FavoritePokemon] Add\", props<{ id: string }>())"
+                },
+                {
+                    "name": "clear",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\"[FavoritePokemon] Clear\")"
+                },
+                {
+                    "name": "remove",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\"[FavoritePokemon] Remove\", props<{ id: string }>())"
+                },
+                {
+                    "name": "updateAllState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/action/app.action.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\"[FavoritePokemon] Update all state \", props<{ ids: string[] }>())"
+                }
+            ],
+            "src/app/states/favorite-pokemon/reducer/app.reducer.ts": [
+                {
+                    "name": "favoriteReducer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/reducer/app.reducer.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createReducer(\r\n  initialState,\r\n\r\n  on(add, (state, {id}) => (\r\n      {\r\n        ...state,\r\n        ids: [...state.ids, id]\r\n      }\r\n    )\r\n  ),\r\n\r\n  on(remove, (state, {id}) => ({\r\n    ...state,\r\n    ids: state.ids.filter((value) => value != id)\r\n  })),\r\n\r\n  on(updateAllState, (state, {ids}) => (\r\n      {\r\n        ...state,\r\n        ids\r\n      }\r\n    )\r\n  ),\r\n\r\n  on(clear, () => initialState)\r\n)"
+                },
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/reducer/app.reducer.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "AppState",
+                    "defaultValue": "{\r\n  ids: [],\r\n}"
+                }
+            ],
+            "src/app/components/item-list/item-list.cy.ts": [
+                {
+                    "name": "mockedItem",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/item-list/item-list.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  id: 1,\r\n  name: \"bulbasaur\",\r\n  sprites: {\r\n    other: {\r\n      \"official-artwork\": {\r\n        front_default: \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png\"\r\n      }\r\n    }\r\n  }\r\n}"
+                }
+            ],
+            "src/app/states/favorite-pokemon/selector/app.selector.ts": [
+                {
+                    "name": "selectAppState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createFeatureSelector<AppState>(\"favorite\")"
+                },
+                {
+                    "name": "selectById",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createSelector(\r\n  selectAppState,\r\n  (state: AppState, props: { id: string }) => state.ids.find(id => id === props.id)\r\n)"
+                },
+                {
+                    "name": "selectItemById",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createSelector(\r\n  selectItemns,\r\n  (items: string[], props: { id: string }) => {\r\n    return items.find(id => id === props.id);\r\n  }\r\n)"
+                },
+                {
+                    "name": "selectItemns",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createSelector(\r\n  selectAppState,\r\n  (state: AppState) => state.ids\r\n)"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/heart/heart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/item-list/item-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ItemListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/item-list/item-list.cy.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "MockStoreService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/item-list/item-list.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockedItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/list/list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/pokeapi.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "PokeapiService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/store.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "StoreService",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "add",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "clear",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "remove",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/action/app.action.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "updateAllState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/app.state.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AppState",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/reducer/app.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "favoriteReducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/reducer/app.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectAppState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectById",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectItemById",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/states/favorite-pokemon/selector/app.selector.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectItemns",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
