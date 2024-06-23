@@ -12,3 +12,19 @@ npm install husky -D
 
 npx husky init
   {initialize husky, this will add the husky configuration to the package.json file}
+
+
+npm install cypress -D
+    {to install cypress}
+npx cypress open
+    {to open cypress and to create the initial configuration}
+npm install eslint-plugin-cypress -D
+    {plugin for eslint not complain about cypres}
+
+
+cypress open
+    {to open cypress and to create the initial configuration}
+cypress run
+    {to run cypress tests in the terminal for the e2e tests}
+cypress run --component
+    {to run cypress tests in the terminal for the components}

@@ -1,11 +1,11 @@
-<li class="list-item">
+<li class="list-item" id="{{'list-item-' + item.id}}">
   <div class="list-item-image-wrapper">
     <img alt="{{item.name}}" class="list-item-image"
          src="{{this.item.sprites.other['official-artwork'].front_default}}"/>
   </div>
   <p>{{ item.name }}</p>
   <div class="list-item-heart-wrapper" style="width: 22px">
-    <app-heart (clickFavorite)="handleClickFavorite()" [selected]="isSelected"
-               [testId]="'heart'+item.id"></app-heart>
+    <app-heart id="heart" (clickFavorite)="handleClickFavorite()" [selected]="isSelected"
+               [testId]="'heart-'+item.id"></app-heart>
   </div>
 </li>
