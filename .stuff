@@ -43,3 +43,13 @@ storybook
 
 npm install eslint-plugin-storybook -D
     {to install eslint plugin for storybook}
+
+
+COMMANDS TO RUN
+
+npm start
+npm run lint
+npm run lint -- --fix
+cypress run
+cypress run --component
+npm run storybook
