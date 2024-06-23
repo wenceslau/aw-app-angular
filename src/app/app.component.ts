@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import {Router} from "express";
-import {PokeapiService} from "./services/pokeapi.service";
+import {Component} from '@angular/core';
+import {PokeapiService} from './services/pokeapi.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,6 @@ import {PokeapiService} from "./services/pokeapi.service";
 })
 export class AppComponent {
   title = 'aw-app-angular';
-
   items: any = [];
 
   constructor(private pokeapiService: PokeapiService) {
@@ -17,8 +15,7 @@ export class AppComponent {
     this.pokeapiService.get('/pokemon?limit=20')
       .subscribe({
         next: (data) => {
-           this.loadDetails(data.results);
-        //  this.items = data.results;
+          this.loadDetails(data.results);
         },
         error: (e) => console.error(e)
       });
@@ -27,7 +24,7 @@ export class AppComponent {
 
   loadDetails(items: any) {
     const promises = items.map((item: { url: string | URL | Request; }) => {
-      return fetch(item.url).then((response) => response.json())
+      return fetch(item.url).then((response) => response.json());
     });
     Promise.all(promises)
       .then((data) => {

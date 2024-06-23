@@ -1,1 +1,14 @@
 npm i @ngrx/store@17
+  {install ngrx, similar to redux}
+
+npm i @angular-eslint/eslint-plugin -D
+  {install eslint for angular}
+
+ng add @angular-eslint/schematics
+  {add angular-eslint schematics, this will add eslint to the project, and will also add the .eslintrc.json file}
+
+npm install husky -D
+  {install husky, this will allow us to run scripts before git actions}
+
+npx husky init
+  {initialize husky, this will add the husky configuration to the package.json file}

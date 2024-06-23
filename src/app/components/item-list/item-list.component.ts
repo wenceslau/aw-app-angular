@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {StoreService} from "../../services/store.service";
-import {Event} from "@angular/router";
+import {StoreService} from '../../services/store.service';
 
 @Component({
   selector: 'app-item-list',
@@ -18,11 +17,11 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     //this.isSelected = this.storeService.hasItem(this.item.id);
-     this.isSelected = this.storeService.has(this.item.id);
+    //this.isSelected = this.storeService.hasItem(this.item.id);
+    this.isSelected = this.storeService.has(this.item.id);
   }
 
-  handleClickFavorite(event: Event) {
+  handleClickFavorite() {
 
     if (this.isSelected) {
       //this.storeService.removeItem(this.item.id);

@@ -1,6 +1,5 @@
-import {Component, Input, Output} from '@angular/core';
-import { EventEmitter } from '@angular/core';
-import {iterator} from "rxjs/internal/symbol/iterator";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {iterator} from 'rxjs/internal/symbol/iterator';
 
 @Component({
   selector: 'app-heart',
@@ -11,11 +10,10 @@ export class HeartComponent {
 
   @Input() testId: string = '';
   @Input() selected: boolean = false;
-  @Output() onClick = new EventEmitter<any>();
-
-  onClickFavorite(event: Event){
-    this.onClick.emit('onClickFavorite');
-  }
-
+  @Output() clickFavorite = new EventEmitter<any>();
   protected readonly iterator = iterator;
+
+  onClickFavorite(event: Event) {
+    this.clickFavorite.emit('onClickFavorite ' + event.type);
+  }
 }

@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class ListComponent {
 
-  @Input() items : any = [];
+  @Input() items: any = [];
 
 
 }

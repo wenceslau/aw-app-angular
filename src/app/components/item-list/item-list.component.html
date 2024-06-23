@@ -1,9 +1,11 @@
 <li class="list-item">
   <div class="list-item-image-wrapper">
-    <img alt="{{item.name}}" class="list-item-image" src="{{this.item.sprites.other['official-artwork'].front_default}}"/>
+    <img alt="{{item.name}}" class="list-item-image"
+         src="{{this.item.sprites.other['official-artwork'].front_default}}"/>
   </div>
-  <p>{{item.name}}</p>
-  <div style="width: 22px" class="list-item-heart-wrapper">
-    <app-heart [selected]="isSelected" [testId]="'heart'+item.id" (onClick)="handleClickFavorite($event)"></app-heart>
+  <p>{{ item.name }}</p>
+  <div class="list-item-heart-wrapper" style="width: 22px">
+    <app-heart (clickFavorite)="handleClickFavorite()" [selected]="isSelected"
+               [testId]="'heart'+item.id"></app-heart>
   </div>
 </li>
