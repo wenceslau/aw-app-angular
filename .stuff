@@ -7,6 +7,9 @@ npm i @angular-eslint/eslint-plugin -D
 ng add @angular-eslint/schematics
   {add angular-eslint schematics, this will add eslint to the project, and will also add the .eslintrc.json file}
 
+npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+  {install typescript-eslint, this will allow us to use typescript with eslint}
+
 npm install husky -D
   {install husky, this will allow us to run scripts before git actions}
 
@@ -28,3 +31,12 @@ cypress run
     {to run cypress tests in the terminal for the e2e tests}
 cypress run --component
     {to run cypress tests in the terminal for the components}
+
+storybook
+    {to create a storybook}
+    npx sb init
+        [to create a storybook]
+
+    {to run the storybook}
+    npm run storybook
+        [to run the storybook]

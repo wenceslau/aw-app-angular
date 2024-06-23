@@ -11,7 +11,6 @@ export class HeartComponent {
   @Input() testId: string = '';
   @Input() selected: boolean = false;
   @Output() clickFavorite = new EventEmitter<any>();
-  protected readonly iterator = iterator;
 
   onClickFavorite(event: Event) {
     this.clickFavorite.emit('onClickFavorite ' + event.type);
