@@ -1,9 +1,9 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input} from "@angular/core";
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+  selector: "app-list",
+  templateUrl: "./list.component.html",
+  styleUrl: "./list.component.scss"
 })
 export class ListComponent {
 

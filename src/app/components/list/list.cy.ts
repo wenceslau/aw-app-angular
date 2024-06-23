@@ -7,11 +7,11 @@
 //
 
 
-import {ListComponent} from './list.component';
+import {ListComponent} from "./list.component";
 
-describe('<ListItem>', () => {
-  it('should render correctly', () => {
+describe("<ListItem>", () => {
+  it("should render correctly", () => {
     cy.mount(ListComponent);
-    cy.get('[id=\'list\']').should('be.visible');
+    cy.get("[id='list']").should("be.visible");
   });
 });

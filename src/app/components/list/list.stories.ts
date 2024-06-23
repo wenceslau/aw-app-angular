@@ -1,34 +1,34 @@
-import {ListComponent} from './list.component';
-import {Meta, moduleMetadata, type StoryObj} from '@storybook/angular';
-import {StoreService} from '../../services/store.service';
-import {ItemListComponent} from '../item-list/item-list.component';
-import {CommonModule} from '@angular/common';
+import {ListComponent} from "./list.component";
+import {Meta, moduleMetadata, type StoryObj} from "@storybook/angular";
+import {StoreService} from "../../services/store.service";
+import {ItemListComponent} from "../item-list/item-list.component";
+import {CommonModule} from "@angular/common";
 
 export class MockStoreService {
   getValue() {
-    return 'mock value';
+    return "mock value";
   }
 }
 
 const mockedItems = [
   {
     id: 1,
-    name: 'bulbasaur',
+    name: "bulbasaur",
     sprites: {
       other: {
-        'official-artwork': {
-          front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+        "official-artwork": {
+          front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
         }
       }
     }
   },
   {
     id: 2,
-    name: 'bulbasaur2',
+    name: "bulbasaur2",
     sprites: {
       other: {
-        'official-artwork': {
-          front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+        "official-artwork": {
+          front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
         }
       }
     }
@@ -36,9 +36,9 @@ const mockedItems = [
 ];
 
 const meta: Meta<ListComponent> = {
-  title: 'Components/List',
+  title: "Components/List",
   component: ListComponent,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [
     moduleMetadata({
       declarations: [
@@ -55,9 +55,9 @@ const meta: Meta<ListComponent> = {
   ],
   argTypes: {
     items: {
-      control: 'text',
-      type: {name: 'string', required: true},
-      description: 'Test id for the heart component'
+      control: "text",
+      type: {name: "string", required: true},
+      description: "Test id for the heart component"
     },
   },
   args: {

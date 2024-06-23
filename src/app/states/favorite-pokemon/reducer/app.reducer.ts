@@ -1,6 +1,6 @@
-import {createReducer, on} from '@ngrx/store';
-import {add, clear, remove, updateAllState} from '../action/app.action';
-import {AppState} from '../app.state';
+import {createReducer, on} from "@ngrx/store";
+import {add, clear, remove, updateAllState} from "../action/app.action";
+import {AppState} from "../app.state";
 
 export const initialState: AppState = {
   ids: [],

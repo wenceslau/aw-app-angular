@@ -1,22 +1,22 @@
-import {ItemListComponent} from './item-list.component';
-import {Meta, moduleMetadata, type StoryObj} from '@storybook/angular';
-import {StoreService} from '../../services/store.service';
-import {MockStoreService} from '../list/list.stories';
+import {ItemListComponent} from "./item-list.component";
+import {Meta, moduleMetadata, type StoryObj} from "@storybook/angular";
+import {StoreService} from "../../services/store.service";
+import {MockStoreService} from "../list/list.stories";
 
 const mockedItem = {
   id: 1,
-  name: 'bulbasaur',
+  name: "bulbasaur",
   sprites: {
     other: {
-      'official-artwork': {
-        front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+      "official-artwork": {
+        front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
       }
     }
   }
 };
 
 const meta: Meta<ItemListComponent> = {
-  title: 'Components/Item List',
+  title: "Components/Item List",
   component: ItemListComponent,
   decorators: [
     moduleMetadata({
@@ -25,17 +25,17 @@ const meta: Meta<ItemListComponent> = {
       ],
     }),
   ],
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     item: {
-      control: 'text',
-      type: {name: 'string', required: true},
-      description: 'Test id for the heart component'
+      control: "text",
+      type: {name: "string", required: true},
+      description: "Test id for the heart component"
     },
     isSelected: {
-      control: 'boolean',
-      type: {name: 'boolean', required: true},
-      description: 'Boolean to determine if the heart is selected or not'
+      control: "boolean",
+      type: {name: "boolean", required: true},
+      description: "Boolean to determine if the heart is selected or not"
     }
   },
   args: {

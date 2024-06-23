@@ -34,7 +34,7 @@
         "@typescript-eslint/no-explicit-any": "off",
         "quotes": [
           "error",
-          "single"
+          "double"
         ],
         "semi": "error"
       }
