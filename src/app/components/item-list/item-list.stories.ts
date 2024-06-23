@@ -1,7 +1,7 @@
-import {ItemListComponent} from "./item-list.component";
-import {Meta, moduleMetadata, type StoryObj} from "@storybook/angular";
-import {StoreService} from "../../services/store.service";
-import {MockStoreService} from "../list/list.stories";
+import {ItemListComponent} from './item-list.component';
+import {Meta, moduleMetadata, type StoryObj} from '@storybook/angular';
+import {StoreService} from '../../services/store.service';
+import {MockStoreService} from '../list/list.stories';
 
 const mockedItem = {
   id: 1,

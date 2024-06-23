@@ -40,3 +40,6 @@ storybook
     {to run the storybook}
     npm run storybook
         [to run the storybook]
+
+npm install eslint-plugin-storybook -D
+    {to install eslint plugin for storybook}

@@ -1,5 +1,5 @@
-import {HeartComponent} from "./heart.component";
-import {Meta, type StoryObj} from "@storybook/angular";
+import {HeartComponent} from './heart.component';
+import {Meta, type StoryObj} from '@storybook/angular';
 
 const meta: Meta<HeartComponent> = {
   title: 'Components/Heart',

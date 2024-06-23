@@ -1,8 +1,8 @@
-import {ListComponent} from "./list.component";
-import {Meta, moduleMetadata, type StoryObj} from "@storybook/angular";
-import {StoreService} from "../../services/store.service";
-import {ItemListComponent} from "../item-list/item-list.component";
-import {CommonModule} from "@angular/common";
+import {ListComponent} from './list.component';
+import {Meta, moduleMetadata, type StoryObj} from '@storybook/angular';
+import {StoreService} from '../../services/store.service';
+import {ItemListComponent} from '../item-list/item-list.component';
+import {CommonModule} from '@angular/common';
 
 export class MockStoreService {
   getValue() {

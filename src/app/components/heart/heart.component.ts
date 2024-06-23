@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {iterator} from 'rxjs/internal/symbol/iterator';
 
 @Component({
   selector: 'app-heart',
